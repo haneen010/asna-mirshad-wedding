@@ -62,12 +62,3 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 
-// Replay the opening screen after the invitation has been opened.
-document.getElementById("replayCover").addEventListener("click",()=>{
-  cover.classList.remove("dismissed","opening");
-  document.body.classList.add("locked");
-  cover.style.display="grid";
-  cover.style.opacity="1";
-  cover.style.transform="none";
-  window.scrollTo({top:0,behavior:"smooth"});
-});
