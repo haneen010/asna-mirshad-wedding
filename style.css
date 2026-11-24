@@ -245,3 +245,67 @@ body{overflow-x:hidden}
 }
 
 
+/* Interactive invitation themes and opening styles */
+.cover-controls{position:absolute;top:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3;width:min(92%,440px);justify-content:center}
+.cover-controls label{font-size:8px;letter-spacing:1.5px;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:7px}
+.cover-controls select{font:500 10px "DM Sans",sans-serif;color:var(--green);background:rgba(255,255,255,.72);border:1px solid var(--gold-light);border-radius:30px;padding:8px 11px;max-width:145px;outline:none}
+.replay-cover{margin-top:14px;border:0;background:transparent;color:var(--gold);font:500 9px "DM Sans",sans-serif;letter-spacing:2px;cursor:pointer}
+.envelope-screen{transition:background 0.5s ease,color 0.5s ease}
+.envelope-screen.theme-blossom{background:radial-gradient(ellipse at center,#fff9f7,#f4e5e2 75%,#ead6d2)}
+.envelope-screen.theme-moonlit{background:radial-gradient(ellipse at center,#263c50,#142434 78%,#0d1a28);color:#f6eee0}
+.envelope-screen.theme-moonlit .eyebrow,.envelope-screen.theme-moonlit .cover-invite-line,.envelope-screen.theme-moonlit .envelope-hint{color:#e4d6b6}
+.envelope-screen.theme-moonlit .envelope-names{color:#f7edda}
+.envelope-screen.theme-dusk{background:radial-gradient(ellipse at center,#5b443e,#302a32 78%,#211e27);color:#fff1dc}
+.envelope-screen.theme-dusk .eyebrow,.envelope-screen.theme-dusk .cover-invite-line,.envelope-screen.theme-dusk .envelope-hint{color:#ead3b0}
+.envelope-screen.theme-dusk .envelope-names{color:#fff0d8}
+.envelope-screen.theme-blossom .envelope-names{color:#744c54}
+.envelope-screen.cover-seal .cover-ornament{transform:scale(.82)}
+.envelope-screen.cover-seal .cover-flourish{display:inline-block;background:#a34d4d;color:#fff;border-radius:50%;padding:12px;box-shadow:0 4px 18px #0002}
+.envelope-screen.cover-palace .cover-arch-line{border-width:4px;border-radius:50% 50% 0 0;box-shadow:0 0 0 8px #b69a5a22,0 0 0 16px #b69a5a11}
+.envelope-screen.cover-ribbon .cover-flourish{display:none}
+.envelope-screen.cover-ribbon .cover-ornament:after{content:"";position:absolute;left:50%;top:50%;width:115px;height:32px;transform:translate(-50%,-50%) rotate(-8deg);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);opacity:.75}
+.envelope-screen.cover-ribbon .cover-ornament{position:relative}
+.envelope-screen.opening{animation:coverFade 1.15s ease forwards}
+@keyframes coverFade{0%{opacity:1;transform:scale(1)}55%{opacity:1;transform:scale(1.04)}100%{opacity:0;transform:scale(1.08)}}
+@media(max-width:560px){.cover-controls{top:12px;gap:6px;flex-direction:column;align-items:center}.cover-controls label{font-size:7px}.cover-controls select{padding:6px 9px}.envelope-content{padding-top:112px}.cover-ornament{margin-top:10px}}
+
+
+/* Fixed blossom background and clearly visible double palace doors */
+.envelope-screen.theme-blossom{
+  background:radial-gradient(ellipse at 50% 40%,#fff8f6 0%,#f5e2e1 64%,#e7c9c9 100%);
+  isolation:isolate;
+}
+.envelope-screen.theme-blossom .envelope-names{color:#744c54}
+.palace-doors{position:absolute;inset:0;z-index:1;display:flex;pointer-events:none;overflow:hidden}
+.palace-door{
+  position:absolute;top:5%;bottom:5%;width:50%;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(246,216,176,.22),transparent 48%),
+    repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,224,190,.13) 35px 37px,transparent 38px 70px),
+    linear-gradient(110deg,#704044 0%,#a9676c 24%,#bd8281 50%,#96585e 78%,#69383e 100%);
+  border:3px solid #d7b77d;
+  box-shadow:inset 0 0 0 7px rgba(255,224,188,.14),inset 0 0 0 10px rgba(238,204,151,.7),0 10px 35px rgba(75,34,39,.2);
+  transition:transform 1.4s cubic-bezier(.72,0,.22,1);
+}
+.palace-door:before{
+  content:"";position:absolute;inset:7% 10%;
+  border:2px solid rgba(248,220,174,.9);
+  border-radius:48% 48% 4px 4px;
+  box-shadow:inset 0 0 0 7px rgba(255,232,196,.09),inset 0 0 0 9px rgba(248,220,174,.38);
+}
+.palace-door:after{
+  content:"✥";position:absolute;top:43%;font-size:clamp(30px,5vw,58px);
+  color:#f4d9a7;text-shadow:0 2px 10px rgba(45,20,24,.35);
+}
+.left-door{left:0;transform-origin:left center;border-right:4px solid #e5c58b}
+.right-door{right:0;transform-origin:right center;border-left:4px solid #e5c58b}
+.left-door:after{right:15%}.right-door:after{left:15%}
+.envelope-content{position:relative;z-index:2}
+.envelope-screen.opening .left-door{transform:perspective(1400px) rotateY(-105deg)}
+.envelope-screen.opening .right-door{transform:perspective(1400px) rotateY(105deg)}
+.envelope-screen.opening .envelope-content{animation:coverFade 1.15s ease forwards}
+@media(max-width:600px){
+  .palace-door{top:3%;bottom:3%}
+  .palace-door:before{inset:9% 7%}
+  .palace-door:after{font-size:27px}
+}
