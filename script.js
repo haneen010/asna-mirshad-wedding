@@ -60,3 +60,27 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.body.appendChild(petal);
   }
 }
+
+
+// Cover appearance selectors
+const cover = document.getElementById("envelopeScreen");
+const themePicker = document.getElementById("themePicker");
+const coverPicker = document.getElementById("coverPicker");
+function applyCoverOptions(){
+  cover.classList.remove("theme-ivory","theme-blossom","theme-moonlit","theme-dusk",
+    "cover-arch","cover-seal","cover-palace","cover-ribbon");
+  cover.classList.add(`theme-${themePicker.value}`,`cover-${coverPicker.value}`);
+}
+themePicker.addEventListener("change",applyCoverOptions);
+coverPicker.addEventListener("change",applyCoverOptions);
+applyCoverOptions();
+
+// Replay the opening screen after the invitation has been opened.
+document.getElementById("replayCover").addEventListener("click",()=>{
+  cover.classList.remove("dismissed","opening");
+  document.body.classList.add("locked");
+  cover.style.display="grid";
+  cover.style.opacity="1";
+  cover.style.transform="none";
+  window.scrollTo({top:0,behavior:"smooth"});
+});
