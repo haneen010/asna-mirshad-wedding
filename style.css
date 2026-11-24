@@ -140,3 +140,25 @@ body{overflow-x:hidden}
   .hero-character,.petal{animation:none!important}
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* ISLAMIC ROYAL ENVELOPE — emerald, antique gold and 3D paper */
+.envelope-screen{background:radial-gradient(ellipse at 50% 42%,rgba(255,255,249,.98),rgba(244,239,226,.98) 62%,#e9e0ce 100%)}
+.envelope-content>.eyebrow{letter-spacing:3.5px;color:#8d7138}
+.envelope-stage{width:min(390px,84vw);height:250px;margin:0 auto 24px;perspective:1400px;display:grid;place-items:center}
+.envelope{width:100%;height:220px;position:relative;perspective:1400px;transform-style:preserve-3d;filter:drop-shadow(0 22px 24px rgba(27,48,34,.2))}
+.envelope-back{position:absolute;inset:0;background:linear-gradient(145deg,#1b513c,#0d3527 70%,#09291f);border:1px solid #c5a45d;border-radius:5px;z-index:0;box-shadow:inset 0 0 0 5px rgba(204,171,102,.12),inset 0 0 0 7px rgba(204,171,102,.28)}
+.envelope-back:before{content:"";position:absolute;inset:12px;border:1px solid rgba(214,184,118,.48);clip-path:polygon(50% 0,100% 35%,100% 100%,0 100%,0 35%)}
+.envelope-letter{position:absolute;left:7%;right:7%;bottom:9px;height:190px;z-index:1;background:linear-gradient(145deg,#fffdf5,#f3ead5);border:1px solid #c9ae70;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#17452f;font-family:"Cormorant Garamond",serif;transition:transform 1.15s cubic-bezier(.2,.78,.22,1) .35s;box-shadow:0 0 0 4px rgba(190,160,92,.12),0 8px 18px rgba(0,0,0,.12)}
+.letter-bismillah{font-size:17px;color:#17452f;margin-bottom:2px}.letter-monogram{font-size:39px;letter-spacing:3px;color:#17452f}.letter-monogram i{font-family:"Great Vibes",cursive;color:#b3944f}.envelope-letter small{font:8px "DM Sans",sans-serif;letter-spacing:2.5px;color:#8c713b}.letter-rule{color:#b3944f;font-size:18px}
+.envelope-flap{position:absolute;inset:0 0 auto;height:66%;z-index:4;background:linear-gradient(145deg,#286348,#12412e 70%,#0b3325);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0deg);transition:transform .95s cubic-bezier(.2,.72,.2,1);backface-visibility:visible;filter:drop-shadow(0 3px 2px rgba(0,0,0,.12))}
+.envelope-flap:after{content:"";position:absolute;left:12%;right:12%;top:7%;height:75%;border-top:1px solid rgba(220,190,125,.85);border-left:1px solid rgba(220,190,125,.45);border-right:1px solid rgba(220,190,125,.45);clip-path:polygon(50% 100%,0 0,100% 0)}
+.envelope-front{position:absolute;inset:0;z-index:3;overflow:hidden;border-radius:3px;background:linear-gradient(145deg,#1d573e,#0d3829);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-bottom:1px solid #c6a45c}
+.envelope-front:before,.envelope-front:after{content:"";position:absolute;top:-38px;width:70%;height:120%;border:1px solid rgba(207,174,103,.68);border-radius:48% 48% 0 0;pointer-events:none}.envelope-front:before{left:-28%;transform:rotate(-28deg)}.envelope-front:after{right:-28%;transform:rotate(28deg)}
+.envelope-arch{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:105px;height:100px;border:1px solid rgba(221,190,124,.7);border-radius:55px 55px 4px 4px;box-shadow:inset 0 0 0 5px rgba(221,190,124,.08)}.envelope-arch:before{content:"";position:absolute;inset:8px;border:1px solid rgba(221,190,124,.45);border-radius:48px 48px 2px 2px}
+.envelope-lantern{position:absolute;top:16px;left:50%;transform:translateX(-50%);color:#e2c47e;font-size:19px}.envelope-mosque{position:absolute;bottom:23px;left:50%;transform:translateX(-50%);font-size:29px;color:#d6b66f}.envelope-front-line{position:absolute;bottom:13px;left:18%;right:18%;height:1px;background:linear-gradient(90deg,transparent,#d6b66f,transparent)}
+.wax-seal{z-index:6;left:50%;top:57%;width:59px;height:59px;border:2px solid #e1c47d;border-radius:50%;background:radial-gradient(circle at 35% 25%,#d7b86f,#9b7130 68%,#69491f);color:#fff4d6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;box-shadow:0 3px 8px rgba(0,0,0,.28),inset 0 0 0 3px rgba(255,235,180,.15)}
+.wax-seal span{font-family:serif;font-size:19px;line-height:1}.wax-seal small{font:6px "DM Sans",sans-serif;letter-spacing:1px;color:#fff0c8}
+.envelope-screen.opening .envelope-flap{transform:rotateX(180deg);z-index:0}.envelope-screen.opening .envelope-letter{transform:translateY(-125px);z-index:5}.envelope-screen.opening .wax-seal{opacity:0;transform:translate(-50%,-50%) scale(.65);transition:opacity .25s,transform .35s}
+.envelope-names{font-size:36px;color:#17452f;margin:0 0 18px}.open-invite{background:#17452f;border-color:#b99a55}.envelope-hint{color:#806b43}
+@media(max-width:600px){.envelope-stage{width:min(340px,84vw);height:220px;margin-bottom:18px}.envelope{height:190px}.envelope-letter{height:164px}.letter-bismillah{font-size:14px}.letter-monogram{font-size:34px}.envelope-arch{width:88px;height:82px}.wax-seal{width:52px;height:52px}.envelope-screen.opening .envelope-letter{transform:translateY(-105px)}}
+@media(prefers-reduced-motion:reduce){.envelope-flap,.envelope-letter,.wax-seal{transition:none!important}}
