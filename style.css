@@ -245,26 +245,3 @@ body{overflow-x:hidden}
 }
 
 
-/* Interactive invitation themes and opening styles */
-.cover-controls{position:absolute;top:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3;width:min(92%,440px);justify-content:center}
-.cover-controls label{font-size:8px;letter-spacing:1.5px;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:7px}
-.cover-controls select{font:500 10px "DM Sans",sans-serif;color:var(--green);background:rgba(255,255,255,.72);border:1px solid var(--gold-light);border-radius:30px;padding:8px 11px;max-width:145px;outline:none}
-.replay-cover{margin-top:14px;border:0;background:transparent;color:var(--gold);font:500 9px "DM Sans",sans-serif;letter-spacing:2px;cursor:pointer}
-.envelope-screen{transition:background 0.5s ease,color 0.5s ease}
-.envelope-screen.theme-blossom{background:radial-gradient(ellipse at center,#fff9f7,#f4e5e2 75%,#ead6d2)}
-.envelope-screen.theme-moonlit{background:radial-gradient(ellipse at center,#263c50,#142434 78%,#0d1a28);color:#f6eee0}
-.envelope-screen.theme-moonlit .eyebrow,.envelope-screen.theme-moonlit .cover-invite-line,.envelope-screen.theme-moonlit .envelope-hint{color:#e4d6b6}
-.envelope-screen.theme-moonlit .envelope-names{color:#f7edda}
-.envelope-screen.theme-dusk{background:radial-gradient(ellipse at center,#5b443e,#302a32 78%,#211e27);color:#fff1dc}
-.envelope-screen.theme-dusk .eyebrow,.envelope-screen.theme-dusk .cover-invite-line,.envelope-screen.theme-dusk .envelope-hint{color:#ead3b0}
-.envelope-screen.theme-dusk .envelope-names{color:#fff0d8}
-.envelope-screen.theme-blossom .envelope-names{color:#744c54}
-.envelope-screen.cover-seal .cover-ornament{transform:scale(.82)}
-.envelope-screen.cover-seal .cover-flourish{display:inline-block;background:#a34d4d;color:#fff;border-radius:50%;padding:12px;box-shadow:0 4px 18px #0002}
-.envelope-screen.cover-palace .cover-arch-line{border-width:4px;border-radius:50% 50% 0 0;box-shadow:0 0 0 8px #b69a5a22,0 0 0 16px #b69a5a11}
-.envelope-screen.cover-ribbon .cover-flourish{display:none}
-.envelope-screen.cover-ribbon .cover-ornament:after{content:"";position:absolute;left:50%;top:50%;width:115px;height:32px;transform:translate(-50%,-50%) rotate(-8deg);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);opacity:.75}
-.envelope-screen.cover-ribbon .cover-ornament{position:relative}
-.envelope-screen.opening{animation:coverFade 1.15s ease forwards}
-@keyframes coverFade{0%{opacity:1;transform:scale(1)}55%{opacity:1;transform:scale(1.04)}100%{opacity:0;transform:scale(1.08)}}
-@media(max-width:560px){.cover-controls{top:12px;gap:6px;flex-direction:column;align-items:center}.cover-controls label{font-size:7px}.cover-controls select{padding:6px 9px}.envelope-content{padding-top:112px}.cover-ornament{margin-top:10px}}
