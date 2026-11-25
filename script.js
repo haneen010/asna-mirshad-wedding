@@ -24,13 +24,22 @@ setInterval(updateCountdown, 1000);
 // Envelope opening interaction
 document.body.classList.add("locked");
 const envelopeScreen = document.getElementById("envelopeScreen");
+
 document.getElementById("openInvite").addEventListener("click", () => {
+  const weddingMusic = new Audio("wedding-song.mp3");
+  weddingMusic.loop = true;
+  weddingMusic.volume = 0.18;
+  weddingMusic.play().catch(error => {
+    console.log("Music playback failed:", error);
+  });
+
   envelopeScreen.classList.add("opening");
   window.setTimeout(() => {
     envelopeScreen.classList.add("dismissed");
     document.body.classList.remove("locked");
   }, 1150);
 });
+
 
 // Reveal sections gently as they enter the viewport.
 const revealItems = document.querySelectorAll(".reveal");
