@@ -28,7 +28,7 @@ const envelopeScreen = document.getElementById("envelopeScreen");
 document.getElementById("openInvite").addEventListener("click", () => {
   const weddingMusic = new Audio("wedding-song.mp3");
   weddingMusic.loop = true;
-  weddingMusic.volume = 0.18;
+  weddingMusic.volume = 0.12;
   weddingMusic.play().catch(error => {
     console.log("Music playback failed:", error);
   });
